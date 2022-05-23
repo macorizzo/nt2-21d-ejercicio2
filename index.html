@@ -49,10 +49,28 @@
                     dni: "20442873"
                 },
                 {
-                    nombre: "...",
-                    apellido: "...",
-                    correo: "...",
-                    dni: "..."
+                    nombre: "Martín",
+                    apellido: "Corizzo",
+                    correo: "macorizzo@gmail.com",
+                    dni: "36066222"
+                },
+                {
+                    nombre: "Pedro",
+                    apellido: "Ramirez",
+                    correo: "pedro@ramirez.com",
+                    dni: "33333333"
+                },
+                {
+                    nombre: "Mario",
+                    apellido: "Baracus",
+                    correo: "mario@brigadaa.com",
+                    dni: "20456789"
+                },
+                {
+                    nombre: "Max",
+                    apellido: "Power",
+                    correo: "maxpower@uol.com",
+                    dni: "21212121"
                 },
             ]
 
@@ -62,6 +80,18 @@
                 return this.personas.filter((persona) => {
                     let registroCompleto = `${persona.nombre} ${persona.apellido} ${persona.dni} ${persona.correo}`
                     return registroCompleto.toLowerCase().includes(this.criterioDeBusqueda.toLowerCase())
+                });
+            },
+            personasFiltradasPorNombre() {
+                return this.personas.filter((persona) => {
+                    let registroCompleto = `${persona.nombre} ${persona.apellido}`
+                    return registroCompleto.toLowerCase().includes(this.nombreApellido.toLowerCase())
+                });
+            },
+            personasFiltradasPorDni() {
+                return this.personas.filter((persona) => {
+                    let registroCompleto = `${persona.dni}`
+                    return registroCompleto.toLowerCase().includes(this.dni.toLowerCase())
                 });
             }
         },
